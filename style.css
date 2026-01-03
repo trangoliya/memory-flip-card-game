@@ -1,0 +1,168 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* =========================
+   STATS & HEADINGS
+========================= */
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+#stats {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* =========================
+   BOARD WRAPPER (STEP 2)
+========================= */
+
+.board-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* =========================
+   GAME BOARD (BASE)
+========================= */
+
+.game-board {
+  display: grid;
+  gap: 12px;
+  margin: 20px auto;
+  max-width: 90vw;
+}
+
+/* =========================
+   CARD STYLES
+========================= */
+
+.card {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: black;
+  border-radius: 9px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(1.9rem, 2vw, 2.2rem);
+  font-weight: bold;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.card:not(.flipped):hover {
+  transform: scale(1.05);
+}
+
+.game-board {
+  perspective: 1000px;
+}
+
+.card {
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+
+.card.matched {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.controls {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: #667eea;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* 📱 Mobile */
+@media (max-width: 599px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 300px;
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    font-size: 1.8rem;
+  }
+}
+
+/* 📱 Tablet */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 420px;
+    gap: 14px;
+  }
+
+  .card {
+    font-size: 2rem;
+  }
+}
+
+/* 💻 Laptop & Desktop */
+@media (min-width: 1024px) {
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 520px;
+    gap: 16px;
+  }
+}
