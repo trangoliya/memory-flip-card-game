@@ -42,7 +42,8 @@ h1 {
   color: black;
   border-radius: 9px;
   cursor: pointer;
-
+  height: 60px;
+  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,24 +53,20 @@ h1 {
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .card:not(.flipped):hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .game-board {
   perspective: 1000px;
 }
 
-.card {
-  transform-style: preserve-3d;
-}
-
 .card.flipped {
   transform: rotateY(180deg);
 }
-
 
 .card.matched {
   opacity: 0.6;

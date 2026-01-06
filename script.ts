@@ -1,4 +1,4 @@
-// Memory Card Game - Full TypeScript Version
+// Memory Card Game - TypeScript
 
 interface CardData {
   emoji: string;
@@ -70,7 +70,7 @@ function initGame(): void {
 
 function updateGrid(): void {
   const cols = pairsCount === 8 ? 4 : pairsCount === 10 ? 5 : 6;
-  // board.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+  board.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
 }
 
 function flipCard(card: CardData): void {

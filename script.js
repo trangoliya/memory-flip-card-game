@@ -1,5 +1,5 @@
 "use strict";
-// Memory Card Game - Full TypeScript Version
+// Memory Card Game - TypeScript
 var _a, _b;
 const emojis = ['🎮', '🎯', '🎨', '🎭', '🎪', '🎸', '🎹', '🎺', '🎻', '🎲', '⚽', '🏀'];
 let cards = [];
